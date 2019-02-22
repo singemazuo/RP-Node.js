@@ -22,7 +22,11 @@
     </form>
 
     <script>
-        
+        $(document).ready(() => {
+            $.get('author/all',(data) => {
+                $('[name = "authorList"]').append($('<option>').setText(data.fname+' '+data.lname));
+            });
+        });
     </script>
 </body>
 </html>
