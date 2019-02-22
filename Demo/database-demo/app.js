@@ -7,7 +7,7 @@ const Author = require('./models/author');
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
-    res.sendFile('index.html');
+    res.sendFile('index.html',{ root: __dirname });
 });
 
 app.get('/author',(req,res) => {

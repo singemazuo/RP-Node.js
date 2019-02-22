@@ -8,8 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/app.js",
-            "port": 3001
+            "program": "${workspaceFolder}/app.js"
         }
     ]
 }

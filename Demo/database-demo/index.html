@@ -11,7 +11,7 @@
         <option value="">-- author list --</option>
     </select>
 
-    <form action="/author/create" method="POST">
+    <form action="/author/create" method="get">
         <label for="fname">First Name:</label>
         <input type="text" name="fname">
         <br>
@@ -31,7 +31,10 @@
     <script>
         $(document).ready(() => {
             $.get('author/all',(data) => {
-                $('[name = "authorList"]').append($('<option>').setText(data.fname+' '+data.lname));
+                $.each(data,(i,author) => {
+                    if(author.fname != undefined && author.lname != undefined)
+                        $('[name = "authorList"]').append($('<option>').text(author.fname+' '+author.lname));
+                });
             });
         });
     </script>
