@@ -1,0 +1,38 @@
+<% if(jokes.length > 0) { %>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Teaser</th>
+                <th scope="col">Joke Text</th>
+                <th scope="col">Visible</th>
+                <th scope="col">Created At</th>
+                <th scope="col">User</th>
+                <th scope="col">Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(var i = 0;i < jokes.length;i ++) { %>
+                <tr>
+                    <td scope="col"><%= jokes[i].id %></th>
+                    <td scope="col"><%= jokes[i].title %></td>
+                    <td scope="col"><%= jokes[i].teaser %></td>
+                    <td scope="col"><%= jokes[i].text %></td>
+                    <td scope="col">
+                        <% if(jokes[i].visible){ %>
+                            <input type="checkbox" name="visible" id="visible" checked>
+                        <% }else{ %>
+                            <input type="checkbox" name="visible" id="visible">
+                        <% } %>
+                    </td>
+                    <td scope="col"><%= jokes[i].createdAt %></td>
+                    <td scope="col"><%= jokes[i].user.username %></td>
+                    <td scope="col"><%= jokes[i].category.category %></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+<% }else{ %>
+    <h5 class="text-center mt-5">No Datas, please add them.</h5>
+<% } %>
