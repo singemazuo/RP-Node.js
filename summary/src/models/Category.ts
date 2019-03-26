@@ -22,8 +22,8 @@ categorySchema.statics.update = async function(id: string, category: string, cal
     if (err) {
       handleError(err);
     } else {
-        doc.category = category; // 修改了内存中的数据age modify the data in Memory
-        // 用save来将数据保存到数据库中 save data in DB
+        doc.category = category; // 修改了内存中的数据age
+        // 用save来将数据保存到数据库中
         doc.save((err1: Error, doc1: any) => {
           if (err1) { return handleError(err1); }
 

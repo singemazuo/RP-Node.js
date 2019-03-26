@@ -16,6 +16,7 @@ class ApiController extends BaseController implements IController {
         });
 
         app.post("/api/jokes/new", (req, res) => {
+            // instantiate Joke model
             const joke = new Joke({
                 title: req.body.title,
                 teaser: req.body.teaser,
